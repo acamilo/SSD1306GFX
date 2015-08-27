@@ -1,4 +1,19 @@
 #include "screen.h"
+int row = 0;
+int page = 0;
+
+void writeByte(uint8_t byte, SDL_Renderer* ren){
+	for(int i=0; i<8; i++)
+		
+		if ((byte>>i)&0x01) drawssd1306Pixel(ren,row,i+(page*8));
+	row++;
+	if(row>127){
+		row = 0;
+		page++;
+		if (page>63)
+			page=0;
+	}
+}
 
 void testPixel(SDL_Renderer* ren){
 	
