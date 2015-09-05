@@ -15,7 +15,9 @@ int main(){
 	//testBufCopy();
 
 	gfx_clear(gfx_getBuffer());
-	fonts_putstr("Hello Chicago!");
+	uint8_t *buf = gfx_getBuffer();
+	//for (int i=0; i<128*2; i++) buf[i]=0x0;
+	fonts_putstr("Variable Width Fonts");
 	while(!checkQuit()){
 		updateSDL();
 		pollEvents();
