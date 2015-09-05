@@ -22,7 +22,7 @@ int fonts_putchar(uint8_t c){
 
 	if (ref==0) return -2; // We don't have that char
 	
-	uint8_t offset = ref>>4;
+	uint16_t offset = ref>>4;
 	uint8_t len = 0x000f & ref;
 	
 	printf("char [off:%d  len:%d]\n", offset,len);
