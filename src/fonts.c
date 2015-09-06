@@ -1,7 +1,7 @@
 #include "fonts.h"
-#include "../src/gfx.h"
-#include "../src/sdl_funcs.h"
-#include "chicago.h"
+#include "gfx.h"
+#include "sdl_funcs.h"
+#include "../fonts/chicago.h"
 
 
 // Where the 'line' currently is on the screen

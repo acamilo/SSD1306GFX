@@ -5,7 +5,7 @@ SOURCES := \
     src/screen.c \
 	src/sdl_funcs.c\
 	src/gfx.c \
-	fonts/fonts.c
+	src/fonts.c
 
 CXXFLAGS := -g -O0 -Wall -pipe -framework SDL2 -framework GLUT -framework OpenGL 
 

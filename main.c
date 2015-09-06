@@ -5,7 +5,7 @@
 #include "main.h"
 #include "src/gfx.h"
 
-#include "fonts/fonts.h"
+#include "src/fonts.h"
 
 
 
