@@ -20,14 +20,14 @@ int main(){
 	
 	fonts_sety(2);
 	fonts_setx(25);
-	fonts_putstr("Variable Width");
+	fonts_putstr("Variable Width:?!");
 	
 	fonts_sety(16);
 	fonts_setx(10);
-	fonts_putstr("Hello");
+	fonts_putstr("Hello World");
 	
 	fonts_sety(16+12);
-	fonts_setx(20);
+	fonts_setx(80);
 	fonts_putstr("ssd1306");
 	
 	fonts_sety(16+12+12);
