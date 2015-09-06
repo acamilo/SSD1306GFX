@@ -3,22 +3,6 @@
 int row = 0;
 int page = 0;
 
-/*
-void testBufCopy(){
-	int bi = 0;
-	int bc = 0;
-	for(int i=0; i<(SSD1306_LCDHEIGHT * SSD1306_LCDWIDTH / 8); i++){
-		if (bc==5){
-			 buffer[i]=0x00;
-			bc=0;
-		}
-		else {
-			bc++;
-			buffer[i]=font[bi++];
-		}
-	}
-}
-*/
 
 void writeByte(uint8_t byte, SDL_Renderer* ren){
 	for(int i=0; i<8; i++)
@@ -31,14 +15,6 @@ void writeByte(uint8_t byte, SDL_Renderer* ren){
 		if (page>63)
 			page=0;
 	}
-}
-
-void testPixel(SDL_Renderer* ren){
-	
-	SDL_SetRenderDrawColor(ren, (Uint8)255, (Uint8)255, (Uint8)255, 255);
-	for(int i=0; i<1; i++)
-		for(int j=0; j<1; j++)
-		drawssd1306Pixel(ren,i,j);
 }
 
 void drawssd1306Pixel(SDL_Renderer* ren,int x, int y){
