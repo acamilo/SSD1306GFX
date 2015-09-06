@@ -10,14 +10,35 @@
 
 
 int main(){
+	int h=0;
 	initSDL();
 	printf("Hello World!\n");
 	//testBufCopy();
 
 	gfx_clear(gfx_getBuffer());
 	uint8_t *buf = gfx_getBuffer();
-	//for (int i=0; i<128*2; i++) buf[i]=0x0;
-	fonts_putstr("Variable Width Fonts");
+	
+	fonts_sety(2);
+	fonts_setx(25);
+	fonts_putstr("Variable Width");
+	
+	fonts_sety(16);
+	fonts_setx(10);
+	fonts_putstr("Hello");
+	
+	fonts_sety(16+12);
+	fonts_setx(20);
+	fonts_putstr("ssd1306");
+	
+	fonts_sety(16+12+12);
+	fonts_setx(30);
+	fonts_putstr("display");
+	
+	fonts_sety(16+12+12+12);
+	fonts_setx(40);
+	fonts_putstr("wheeeeee");
+	//fonts_sety(10);
+
 	while(!checkQuit()){
 		updateSDL();
 		pollEvents();

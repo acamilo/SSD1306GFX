@@ -180,7 +180,7 @@ void renderChar(int x, int y, char c, uint8_t * buff){
 					
 }
 
-uint8_t * gfx_getBuffer(){
+uint8_t *gfx_getBuffer(){
 	return buffer;
 }
 

@@ -1,13 +1,23 @@
 from PIL import Image
 import sys
 import code
+
+
+
 im = Image.open("chicago.bmp") #Can be many different formats.
 pix = im.load()
 print im.size #Get the width and hight of the image for iterating over
 print pix[0,0] #Get the RGBA Value of the a pixel of an image
 
-# find start markers
+
 chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ?:"
+
+
+# find start markers should be 1 px away from first char.
+# red marker denotes bit 1
+# blue marker denotes bit 16
+# charecters are seperated by 2 pixels of blank space
+# bits to set are white and blank bits are black.
 
 start = 0;
 end = 0;

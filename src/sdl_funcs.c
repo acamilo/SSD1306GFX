@@ -14,7 +14,7 @@ int initSDL(){
 		return 1;
 	}
 	
-	win = SDL_CreateWindow("Hello World!", 100, 100, 128*screenScale, 64*screenScale, SDL_WINDOW_SHOWN);
+	win = SDL_CreateWindow("SSD1306 128x64!", 100, 100, 128*screenScale, 64*screenScale, SDL_WINDOW_SHOWN);
 	if (win == 0){
 		printf("SDL_CreateWindow Error: %s",SDL_GetError());
 		SDL_Quit();
@@ -28,8 +28,13 @@ int initSDL(){
 		SDL_Quit();
 		return 1;
 	}
+
+	
+	
 	return 0;
 }
+
+
 void updateSDL(){
 	SDL_SetRenderDrawColor(ren, 0, 0, 0, 255);
 	SDL_RenderClear(ren);
