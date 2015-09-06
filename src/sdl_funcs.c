@@ -9,6 +9,7 @@ int quit=0;
 SDL_Event e;
 
 int initSDL(){
+	// Go SDL Go!
 	if (SDL_Init(SDL_INIT_VIDEO) != 0){
 		printf("SDL_Init Error: %s", SDL_GetError());
 		return 1;

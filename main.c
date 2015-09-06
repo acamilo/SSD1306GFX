@@ -13,10 +13,8 @@ int main(){
 	int h=0;
 	initSDL();
 	printf("Hello World!\n");
-	//testBufCopy();
 
 	gfx_clear(gfx_getBuffer());
-	uint8_t *buf = gfx_getBuffer();
 	
 	fonts_sety(2);
 	fonts_setx(25);
@@ -37,7 +35,6 @@ int main(){
 	fonts_sety(16+12+12+12);
 	fonts_setx(40);
 	fonts_putstr("wheeeeee");
-	//fonts_sety(10);
 
 	while(!checkQuit()){
 		updateSDL();
