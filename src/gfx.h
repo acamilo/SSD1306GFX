@@ -9,7 +9,7 @@
  * gfx_clear			Takes pointer to buffer and clears it.
  * 
  */
-void drawss
+
 
 uint8_t * gfx_getBuffer();
 
