@@ -1,12 +1,21 @@
 #include "fonts.h"
 #include "gfx.h"
 #include "sdl_funcs.h"
-#include "../fonts/chicago.h"
 
 
 // Where the 'line' currently is on the screen
 int x=0;
 int y=0;
+
+uint8_t  * fontUpper;
+uint8_t  * fontLower;
+uint16_t * fontOffset;
+
+void fonts_setfont(uint8_t *fu,uint8_t *fl,uint16_t *foff){
+	fontUpper  = fu;
+	fontLower  = fl;
+	fontOffset = foff;
+}
 
 
 int fonts_putchar(uint8_t c){
@@ -18,7 +27,7 @@ int fonts_putchar(uint8_t c){
 	}
 	
 	// Look up the char
-	uint16_t ref = font_off_len_table[c];
+	uint16_t ref = fontOffset[c];
 
 	if (ref==0) return -2; // We don't have that char
 	
@@ -40,9 +49,9 @@ int fonts_putchar(uint8_t c){
 		uint8_t ly = y&0x07;
 		uint8_t s  = y>>3;
 		printf("s: %d\n",s);
-		uint8_t lower = (font_lower_pix[i+offset]<<ly ) ;
-		uint8_t upper = ( font_upper_pix[i+offset]<<ly) | (font_lower_pix[i+offset]>>(8-ly) ) ;
-		uint8_t overflow = (font_upper_pix[i+offset]>>(8-ly) );
+		uint8_t lower = (fontLower[i+offset]<<ly ) ;
+		uint8_t upper = ( fontUpper[i+offset]<<ly) | (fontLower[i+offset]>>(8-ly) ) ;
+		uint8_t overflow = (fontUpper[i+offset]>>(8-ly) );
 		
 		
 		buf[i+(SSD1306_LCDWIDTH*(0+s))+x] |= lower;

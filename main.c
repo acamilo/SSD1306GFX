@@ -7,6 +7,8 @@
 
 #include "src/fonts.h"
 
+#include "fonts/chicago.h"
+
 
 
 int main(){
@@ -14,6 +16,11 @@ int main(){
 	initSDL();
 	printf("Hello World!\n");
 
+	fonts_setfont( \
+		chicago_font_upper_pix, \
+		chicago_font_lower_pix, \
+		chicago_font_off_len_table);
+		
 	gfx_clear(gfx_getBuffer());
 	
 	fonts_sety(2);
